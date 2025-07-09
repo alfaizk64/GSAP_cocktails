@@ -6,7 +6,7 @@ import { useRef } from 'react'
 import { useMediaQuery } from 'react-responsive'
 
 function Hero() {
-    const videoref = useRef()
+    const videoRef = useRef()
     const isMobile = useMediaQuery({maxWidth: 767})
     useGSAP(()=>{
         const heroSplit = new SplitText('.title',{type:'chars, words'})
@@ -32,7 +32,7 @@ function Hero() {
                 trigger:'#hero',
                 start:"top top",
                 end:"bottom",
-                scrub:true
+                scrub:true,
             }
         })
         .to('.right-leaf',{
@@ -54,9 +54,9 @@ function Hero() {
                 pin:true,
             }
           }) 
-          videoref.current.onloadedmetadata = () =>{
-             tl.to(videoref.current,{
-                currentTime:videoref.current.duration
+          videoRef.current.onloadedmetadata = () =>{
+             tl.to(videoRef.current,{
+                currentTime:videoRef.current.duration
              }
 
              )
@@ -91,7 +91,7 @@ function Hero() {
      </section>
      <div className="video absolute inset-0">
         <video 
-        ref={videoref}
+        ref={videoRef}
          src='/videos/output.mp4'
          muted
          playsInline
