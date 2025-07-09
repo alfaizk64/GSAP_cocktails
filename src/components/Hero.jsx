@@ -65,7 +65,7 @@ function Hero() {
 
   return (
     <>
-     <section id='hero' className='noisy'>
+     <section id='hero' className='noisy '>
              <h1 className='title'>MOJITO</h1>
              <img src="/images/hero-left-leaf.png" alt="Left-Leaf" className="left-leaf" />
              <img src="/images/hero-right-leaf.png" alt="right-Leaf" className="right-leaf" />
@@ -89,18 +89,21 @@ function Hero() {
                  </div>
              </div>
      </section>
-     <div className="video absolute inset-0">
-        <video 
-        ref={videoRef}
-         src='/videos/output.mp4'
-         muted
-         playsInline
-         preload='auto'
-        />
-     </div>
+        <div className="video absolute inset-0">
+            <video 
+            ref={videoRef}
+            src='/videos/output.mp4'
+            muted
+            playsInline
+            preload='auto'
+            />
+        </div>
      
     </>
   )
 }
 
 export default Hero
+
+
+// ffmpeg -i input.mp4 -vf scale=960:-1 -movflags faststart -vcodec libx264 -crf 20 -g 1 -pix_fmt yuv420p output.mp4

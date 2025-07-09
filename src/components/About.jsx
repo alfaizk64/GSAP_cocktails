@@ -11,7 +11,6 @@ function About() {
         })
         const scrollTimeline = gsap.timeline({
             scrollTrigger:{
-                markers:true,
                   trigger:"#about",
                   start:'top center'
             }
