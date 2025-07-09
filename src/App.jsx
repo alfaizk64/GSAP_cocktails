@@ -14,9 +14,7 @@ function App() {
         <main>
           <Navbar/>
           <Hero/>
-          <div className='h-screen'>
-
-          </div>
+          
         </main>
     </>
   )
